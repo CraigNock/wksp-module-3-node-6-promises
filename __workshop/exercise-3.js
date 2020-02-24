@@ -7,10 +7,11 @@
 // 4. Make sure your function only returns a `Promise` for the current temperature
 // (a number) and nothing else
 
-const weather = require('darksky');
+const rp = require('request-promise');
 // Given a position (latitude and longitude), returns the position
+
 function getCurrentTemperatureAtPosition(position) {
-    return weather(`https://api.darksky.net/forecast/73a1560890f014ae828d04777c8ff48e/${position.lat},${position.lng}`)
+    return rp(`https://api.darksky.net/forecast/73a1560890f014ae828d04777c8ff48e/${position.lat},${position.lng}`)
     .then(data => {
         let darkData = JSON.parse(data);
         let temp = darkData.currently.temperature;
@@ -23,7 +24,10 @@ function getCurrentTemperatureAtPosition(position) {
 };
 
 
-getCurrentTemperatureAtPosition({
-    lat: 37,
-    lng: -122
-});
+// getCurrentTemperatureAtPosition({
+//     lat: 37,
+//     lng: -122
+// });
+
+
+module.exports = {getCurrentTemperatureAtPosition};
