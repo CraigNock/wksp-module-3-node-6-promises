@@ -23,8 +23,8 @@ function getAddressPosition(address) {
             // if (data.status.code == 200) {
                 // if (data.results.length > 0) {
                     const place = data.results[0];
-                    // console.log(place.geometry);
-                    return place;
+                    console.log(place.geometry);
+                    return place.geometry;
                 // }
             // } else {
             //     // other possible response codes:

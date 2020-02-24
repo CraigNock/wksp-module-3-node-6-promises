@@ -30,7 +30,7 @@ _The separate threads are completely inaccessible to JavaScript._
 
 ### the Call Stack
 
-- When calling a function, JS suspends the currently running code and "jump" to the code of the function.
+- When calling a function, JS suspends the currently running code and "jumps" to the code of the function.
 - When a `return` statement is encountered, JS needs to know where to _return_ to.
 - JS keeps track of this in the call stack.
 
@@ -85,7 +85,7 @@ _Where is there a potential problem?_
 
 #### The Node solution
 
-- Any I/O functions are made _asynchronous_
+- Any Incoming/Outgoing functions are made _asynchronous_
 - Node uses a separate _thread_ under its control to do the I/O
 - The I/O function will **not `return` anything**
 - Instead, the I/O function will take an additional parameter, a callback.
