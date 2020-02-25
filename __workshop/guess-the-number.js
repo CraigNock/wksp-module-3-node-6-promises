@@ -21,21 +21,21 @@ let tries = 1;
 ask = () =>{
     inquirer.prompt(questions)
         .then(answer => {
-            console.log(answer);
+            // console.log(answer);
             if(tries === 5){
-                console.log('loss');
+                console.log(`Loss! The number was ${hiddenNum}`);
                 return;
             }
-            if (answer !=== 9){
+            if (answer.guess !== `${hiddenNum}`){
+                // console.log(hiddenNum);
+                console.log(`Tries Used: ${tries}/5`)
                 ask();
                 tries++;
+            } else {
+                console.log('Winnar!');
             }
         })
 }
 
-// while (tries < 4) {
-//     ask();
-//     tries++;
-// }
 
 ask();
