@@ -11,7 +11,7 @@ const rp = require('request-promise');
 // Given a position (latitude and longitude), returns the position
 
 function getCurrentTemperatureAtPosition(position) {
-    return rp(`https://api.darksky.net/forecast/73a1560890f014ae828d04777c8ff48e/${position.lat},${position.lng}`)
+    return rp(`https://api.darksky.net/forecast/apikey/${position.lat},${position.lng}`)
     .then(data => {
         let darkData = JSON.parse(data);
         let temp = darkData.currently.temperature;
