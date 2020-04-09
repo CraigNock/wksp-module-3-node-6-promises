@@ -15,7 +15,7 @@ const opencage = require('opencage-api-client');
 function getAddressPosition(address) {
     const requestObj = {
         key: 'apikey',
-        q: address
+        q: address,
     };
 
     return opencage.geocode(requestObj)
@@ -24,7 +24,7 @@ function getAddressPosition(address) {
                 // if (data.results.length > 0) {
                     const place = data.results[0];
                     // console.log(place.geometry);
-                    return place;
+                    return place.geometry;
                 // }
             // } else {
             //     // other possible response codes:
@@ -35,4 +35,10 @@ function getAddressPosition(address) {
         .catch(error => console.log('error', error.message));
 }
 
+
+
+
+module.exports = {getAddressPosition};
+=======
 console.log(getAddressPosition('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'));
+

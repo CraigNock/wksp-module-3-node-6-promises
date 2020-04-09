@@ -10,11 +10,19 @@
 // You can copy/paste your code from the previous exercises,
 // or require them at the top of this file.
 // Remember to _export_ them from their file, if you plan on _requiring_ them.
+// const rp = require('request-promise');
 
-
+const {getAddressPosition} = require('./exercise-2');
+const {getCurrentTemperatureAtPosition} = require('./exercise-3');
 
 // Given an address as a string, returns the temperature
 // Use the getCurrentTemperatureAtPosition function
 function getCurrentTemperature(address) {
-
+    return getAddressPosition(address)
+        .then(data => {
+            return getCurrentTemperatureAtPosition(data) //can just put .then(function), data will auto pass
+        })
 }
+
+
+getCurrentTemperature('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8');
