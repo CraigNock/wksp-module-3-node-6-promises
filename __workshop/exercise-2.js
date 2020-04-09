@@ -14,8 +14,8 @@ const opencage = require('opencage-api-client');
 
 function getAddressPosition(address) {
     const requestObj = {
-        key: '68bcfaf0d43b46dfa61deef7a395a4a4',
-        q: address
+        key: 'apikey',
+        q: address,
     };
 
     return opencage.geocode(requestObj)
@@ -35,7 +35,10 @@ function getAddressPosition(address) {
         .catch(error => console.log('error', error.message));
 }
 
-// console.log(getAddressPosition('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'));
+
 
 
 module.exports = {getAddressPosition};
+=======
+console.log(getAddressPosition('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'));
+
