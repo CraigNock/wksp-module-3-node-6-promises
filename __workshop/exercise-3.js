@@ -34,7 +34,9 @@ var options = {
 
 function getCurrentTemperatureAtPosition() {
     return rp(options)
-        .then (position => {console.log(position)});
+        .then (position => {
+            let data = JSON.parse(position);
+            console.log(data.currently.temperature)});
 
 }
 
